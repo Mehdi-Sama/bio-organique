@@ -1,9 +1,16 @@
 <?php
 
 
-use GuzzleHttp\Psr7\ServerRequest;
+use Core\App;
 use DI\ContainerBuilder;
 use function Http\Response\send;
+use GuzzleHttp\Psr7\ServerRequest;
+use Core\Framework\Middleware\RouterMiddleware;
+use Core\Framework\Middleware\NotFoundMiddleware;
+use Core\Framework\Middleware\UserAuthMiddleware;
+use Core\Framework\Middleware\AdminAuthMiddleware;
+use Core\Framework\Middleware\TrailingSlashMiddleware;
+use Core\Framework\Middleware\RouterDispatcherMiddleware;
 
 require dirname(__DIR__).'/vendor/autoload.php';
 
