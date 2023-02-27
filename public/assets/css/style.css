@@ -1,0 +1,51 @@
+header{
+    display: flex;
+    height: 15vh;
+    width: 100vw;
+    background-color: white;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+}
+nav{
+    display: flex;
+}
+nav a{
+    text-decoration: none;
+    margin: 20px;
+    color: black;
+}
+.nav-burger{
+    display: none;
+    cursor: pointer;
+    margin-right: 20px;
+    border-radius: 20px;
+}
+@media screen and (max-width: 780px){
+    nav{
+        display: none;
+    }
+    header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    img{
+        width: 50%;
+    }
+    /* MENU BURGER */
+.navbar-burger {
+    display: none;
+    cursor: pointer;
+    margin-right: 20px;
+    border-radius: 20px;
+}
+.navbar-burger-line {
+    width: 25px;
+    height: 2px;
+    background-color: white;
+    margin: 6px 0;
+    transition: transform 0.5s ease-in-out;
+}
+    
+}
