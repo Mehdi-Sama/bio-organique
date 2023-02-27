@@ -1,8 +1,12 @@
 <?php
 
-
 use Core\App;
+use App\Home\HomeModule;
+use App\User\UserModule;
 use DI\ContainerBuilder;
+use Model\Entity\Product;
+use App\Admin\AdminModule;
+use App\Product\ProductModule;
 use function Http\Response\send;
 use GuzzleHttp\Psr7\ServerRequest;
 use Core\Framework\Middleware\RouterMiddleware;
@@ -15,6 +19,10 @@ use Core\Framework\Middleware\RouterDispatcherMiddleware;
 require dirname(__DIR__).'/vendor/autoload.php';
 
 $modules = [
+   AdminModule::class,
+   UserModule::class,
+   ProductModule::class,
+   HomeModule::class
    
 ];
 
@@ -42,8 +50,6 @@ if (php_sapi_name() !=='cli')
     send($response);
 }
     
-    
-// UNE MODIF
 
 ?>
     

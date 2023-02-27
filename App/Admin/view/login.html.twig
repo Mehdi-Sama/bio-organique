@@ -1,0 +1,20 @@
+{% extends 'admin.layout.html.twig' %}
+
+{% block stylesheet %}
+
+    <link rel="stylesheet" href="{{ assets('/assets/css/style.css') }}" >
+
+{% endblock %}
+
+{% block body %}
+<h1>Bienvenue Administrateur</h1>
+<form method="POST" action=""> 
+    <label for="mail">Mail</label>
+    <input name="mail" id="mail"type="text"> 
+    <label for="passord">Mot de passe</label>
+    <input name="mdp" id="mdp"type="password"> 
+    <input type="submit" value="Se connecter">
+</form>
+
+{% endblock %}
+

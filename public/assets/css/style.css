@@ -1,19 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 header{
     display: flex;
     height: 15vh;
     width: 100vw;
-    background-color: white;
+    background-color: black;
     align-items: center;
     justify-content: space-between;
-    position: fixed;
+    /* position: fixed; */
 }
 nav{
     display: flex;
+    width: auto;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 nav a{
     text-decoration: none;
-    margin: 20px;
-    color: black;
+    margin: 10px;
+    color: white;
 }
 .nav-burger{
     display: none;

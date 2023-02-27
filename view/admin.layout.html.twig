@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block stylesheet %}
+    {% endblock %}
+    <title>{{ siteName }}</title>
+</head>
+<body>
+   <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="{{ path('admin.home') }}">Home</a>
+                </li>
+                <li>
+                    <a href="{{ path('Ajout de véhicules') }}">Ajouter un véhicule</a>
+                </li>
+                 <li>
+                    <a href="{{ path('marque.add') }}">Ajouter une marque</a>
+                </li>
+                <li>
+                    <a href="{{ path('marque.list') }}">Liste des marques</a>
+                </li>
+                 <li>
+                    <a href="{{ path('car.list') }}">Liste des véhicules</a>
+                </li>
+                <li>
+                    <a href="{{ path('admin.logout') }}">Déconnexion</a>
+                </li>
+                 
+            </ul>
+        </nav> 
+   </header>
+   <main>
+
+   {% if hasToast() %}
+        {% for toast in renderToast() %}
+		{{ toast | raw }}
+
+	{% endfor %}
+   {% endif %}
+    {% block body %}
+    <!-- insérer page ici -->
+    {% endblock %}
+   </main>
+   <footer>
+        <h1>Je suis le footer</h1>
+   </footer>
+</body>
+</html>
