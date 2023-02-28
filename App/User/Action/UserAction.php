@@ -110,4 +110,9 @@ class UserAction
         $this->toaster->makeToast('Déconnexion réussie', Toaster::SUCCESS);
         return $this->redirect('user.login');
     }
+
+    public function about(ServerRequest $request)
+    {
+        return $this->renderer->render('@user/about');
+    }
 }

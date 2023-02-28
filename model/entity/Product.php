@@ -16,16 +16,13 @@ class Product
     private $panier; 
 
     /**
-     * Many products have Many Conteneur.
-     * @ORM\ManyToMany(targetEntity="conteneur")
-     * @ORM\JoinTable(name="product_conteneur",
-     * @ORM\JoinColumns={@JoinColumn(name="product_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@JoinColumn(name="conteneur_id", referencedColumnName="id")}
-     *      )
+     * Many product have Many conteneur.
+     * @ORM\ManyToMany(targetEntity="Conteneur", inversedBy="Product")
+     * 
      */
-
-
-
+    private $product;
+    
+   
     /**
      * @ORM\Id
      * @ORM\Column(type="integer", name="id")
@@ -177,5 +174,41 @@ class Product
     public function getPanier()
     {
         return $this->panier;
+    }
+
+    /**
+     * Add product.
+     *
+     * @param \Model\Entity\Conteneur $product
+     *
+     * @return Product
+     */
+    public function addProduct(\Model\Entity\Conteneur $product)
+    {
+        $this->product[] = $product;
+
+        return $this;
+    }
+
+    /**
+     * Remove product.
+     *
+     * @param \Model\Entity\Conteneur $product
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeProduct(\Model\Entity\Conteneur $product)
+    {
+        return $this->product->removeElement($product);
+    }
+
+    /**
+     * Get product.
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProduct()
+    {
+        return $this->product;
     }
 }

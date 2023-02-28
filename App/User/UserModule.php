@@ -27,6 +27,7 @@ class UserModule extends AbstractModule
         $this->router->post('/connexion', [$userAction, 'login'], 'user.connexion');
         $this->router->get('/user/home', [$userAction, 'home'], 'user.home');
         $this->router->get('/user/logout', [$userAction, 'logout'], 'user.logout');
+        $this->router->get('/about', [$userAction, 'about'], 'user.about');
         
 
     }

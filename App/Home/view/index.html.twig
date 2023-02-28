@@ -1,9 +1,83 @@
 {% extends 'layout.html.twig' %}
-
 {% block stylesheet %}
-<link rel="stylesheet" href="./assets/css/style.css">
+	<link rel="stylesheet" href="./assets/css/style.css">
 {% endblock %}
 
 {% block body %}
-<h1>Bienvenue sur {{ siteName }}</h1>
-{% endblock %}
+
+	<article class="first">
+		<img src="/assets/img/white100ml.png" alt="" width="40%">
+		<button id="discover">Découvrir nos huiles</button>
+	</article>
+	<article class="second">
+		<div class="texte">
+			<h4>L’huile d’argan est recommandée pour :
+			</h4>
+
+			<li>Peau sèche</li>
+			<li>Peau mature manquant de tonus</li>
+			<li>Peau dévitalisée</li>
+			<li>Peau à imperfections</li>
+			<li>Hydratation de la peau</li>
+			<li>Obtenir une peau plus lisse et douce</li>
+			<br>
+			<h3>L’huile d’argan Bio Organique s’utilise très bien en tant que:</h3>
+			<li>Huiles de massage pour le corps</li>
+			<li>Crèmes de jour protectrices et nourrissantes</li>
+			<li>Crèmes de nuit régénératrices et anti-âge</li>
+			<li>Crèmes protectrices pour les mains</li>
+			<li>Soins orientaux et hammam</li>
+			<br>
+			Tous nos produits font partie d’un processus de production éthique, ne sont jamais testés sur les animaux. Et AUCUN additifs ou produits chimique ne sont utilisés dans nos produits. Notre huile d’Argan est 100% naturelle et pure, bio certifiée ECOCERT et USDA.
+			<br>
+
+			Il est important pour une huile de bonne qualité de vérifier l’ingrédient. Vous ne devriez voir que l’huile d’argan 100% comme ingrédient unique et 100% biologique. Évitez les produits contenant des additifs, des conservateurs, des parfums, etc.
+			<br>
+
+			Votre peau devrait avoir le meilleur traitement, et son départ de la sélection du produit de haute qualité pure BIO et certifié ECOCERT.</p>
+	</div>
+	<div class="img-presentation">
+		<img id="presentation" src="/assets/img/huile.jpg" alt="" width="100%">
+	</div>
+</article>
+<article class="third">
+	<div class="usda">
+		<div class="img-usda">
+			<img src="/assets/img/usda.gif" alt="" width="100%">
+		</div>
+
+		<p>100% naturel<br>
+			Nos produits contiennent uniquement de l'huile d'argan et rien d'autre. Sans acun produit chimique ou additif.<br>
+			100% naturel pour votre peau, vos ongles, vos cheveux et votre votre corps.
+		</p>
+	</div>
+	<div class="tested">
+		<p>BIO CERTIFIÉ ECOCERT ET USDA. Notre huile d'argan est de haute qualité et réponds à une charte de culture Biologique certifié ECOCERT et USDA.</p>
+		<div class="img-tested">
+			<img src="/assets/img/tested.jpg" alt="" width="100%">
+		</div>
+
+	</div>
+</article>
+<article class="four">
+	<div class="vertu">
+		<p>L'HUILE D'ARGAN - VERTUS ANTI-ÂGE. Forte teneur en acides gras (oméga 6 et 9) et en vitamines E. L'huile d'argan a des propriétés hydratantes et nourrissantes pour combattre le viellissement, en la régénération cellulaire. Améliorer l'élasticité et la fermeté de la peau.</p>
+		<div class="img-vertu">
+			<img id="img-vertu" src="/assets/img/vertu.png" alt="" width="250%">
+		</div>
+	</div>
+	<div class="ecocert">
+		<div class="img-ecocert">
+			<img src="/assets/img/ecocert.png" alt="" width="100%">
+		</div>
+		<p>100% naturel<br>
+			Nos produits contiennent uniquement de l'huile d'argan et rien d'autre. Sans acun produit chimique ou additif.<br>
+			100% naturel pour votre peau, vos ongles, vos cheveux et votre votre corps.
+		</p>
+	</div>
+</article>
+<div id="scroll_to_top">
+	<a href="#top">
+		<i class="fa-solid fa-arrow-up"></i>
+	</a>
+</div>{% endblock %}{% block scripts %}{% endblock %}

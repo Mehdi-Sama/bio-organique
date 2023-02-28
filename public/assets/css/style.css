@@ -14,15 +14,124 @@ header{
 }
 nav{
     display: flex;
+    flex-direction: column;
     width: auto;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-right: 20px;
+}
+header img{
+    padding-left: 20px;
+}
+.font i{
+    color: white;
+    margin: 10px ;
+}
+.font{
+    display: flex;
+    justify-content: end;
 }
 nav a{
     text-decoration: none;
     margin: 10px;
     color: white;
 }
+.first{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 85vh;
+}
+.texte{
+    width: 35%;
+}
+.img-presentation{
+    width: 35%;
+}
+#discover{
+    background-color: rgb(228, 202, 128);
+    width: 220px;
+    height: 40px;
+    border-radius: 25px;
+    margin-top: 20px;
+}
+.second{
+    display: flex;
+    justify-content: center;
+    gap: 3%;
+    height: 100vh;
+}
+#presentation{
+    border-radius: 50px;
+}
+.third{
+    display: flex;
+    justify-content: space-around;
+    height: 30vh;
+
+}
+.usda, .tested, .ecocert, .vertu{
+    display: flex;
+    width: 30%;
+}
+.ecocert{
+    gap: 3%;
+}
+.four{
+    display: flex;
+    justify-content: space-around;
+}
+footer{
+    display: flex;
+    justify-content: space-between;
+    height: 40vh;
+    width: auto;
+    background-color: #F3F2F2;
+}
+#imgfooter{
+    width: 50%;
+}
+.left{
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30%;
+    height: 100%;
+}
+.middle{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.right{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+#scroll_to_top {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    bottom: 50px;
+    right: 30px;
+    border-radius: 50%;
+    background-color: rgb(228, 202, 128);
+  }
+  #scroll_to_top i{
+      font-size: x-large;
+  }
+  a i{
+    color: black;
+  }
 .nav-burger{
     display: none;
     cursor: pointer;
