@@ -115,4 +115,19 @@ class UserAction
     {
         return $this->renderer->render('@user/about');
     }
+
+    public function contact(ServerRequest $request)
+    {
+        return $this->renderer->render('@user/contact');
+    }
+
+    public function avis(ServerRequest $request)
+    {
+        return $this->renderer->render('@user/avis');
+    }
+
+    public function product(ServerRequest $request)
+    {
+        return $this->renderer->render('@user/product');
+    }
 }

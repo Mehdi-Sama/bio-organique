@@ -1,0 +1,23 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+ <link rel="stylesheet" href="{{ assets('/assets/css/contact.css') }}" />
+ <link rel="stylesheet" href="{{ assets('/assets/css/style.css') }}" />
+{% endblock %}
+
+
+{% block body %}
+<section>
+
+<h1>Nous contacter</h1> <br>
+<hr>
+<main class="form">
+    <form action="" method="POST">
+        <input type="text" placeholder="* Nom" required>
+        <input id="mail" type="mail" placeholder="* Email" required> <br>
+        <textarea placeholder="* Votre message" required></textarea>  <br><br>
+        <button>Envoyer</button>
+    </form>
+</main>
+</section>
+{% endblock %}

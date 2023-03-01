@@ -2,7 +2,7 @@
 
 {% block stylesheet %}
  <link rel="stylesheet" href="{{ assets('/assets/css/userForm.css') }}" />
- <link rel="stylesheet" href="./assets/css/style.css">
+ <link rel="stylesheet" href="{{ assets('/assets/css/style.css') }}" />
 {% endblock %}
 
 {% block scripts %}
@@ -13,8 +13,8 @@
 
     <div class="userFormViewPort">
         <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-primary" onclick="slider('connexion')">Connexion</button>
-            <button type="button" class="btn btn-secondary" onclick="slider('inscription')">Inscription</button>
+            <button type="button" class="btn btn-dark" onclick="slider('connexion')">Connexion</button>
+            <button type="button" class="btn btn-light" onclick="slider('inscription')">Inscription</button>
         </div>
         <div class="formContainer d-flex">
             {# Formulaire connexion #}
@@ -27,7 +27,8 @@
                     <input type="password" class="form-control" name="mdp" id="connexion_password" placeholder="Password">
                     <label for="connexion_password">Password</label>
                 </div>
-                <input type="submit" value="Connexion">
+                <br>
+                <input id="buttoni" type="submit" value="Connexion">
             </form>
 
             {# Formulaire inscription #}
@@ -48,11 +49,13 @@
                     <input type="password" class="form-control" name="mdp" id="floatingPassword" placeholder="Password">
                     <label for="floatingPassword">Mot de passe</label>
                 </div>
+                <br>
                 <div class="form-floating">
                     <input type="password" class="form-control" name="mdp_confirm" id="floatingPasswordConfirm" placeholder="Password">
                     <label for="floatingPasswordConfirm">Confirmer le mot de passe</label>
                 </div>
-                <input type="submit" value="Inscription">
+                <br>
+                <input id="button" type="submit" value="Crée mon compte">
             </form>
         </div>
     </div>

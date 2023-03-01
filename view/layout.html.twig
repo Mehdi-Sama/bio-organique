@@ -16,15 +16,20 @@
 			<img src="/assets/img/logo.png" alt="" width="20%">
 			<nav>
 				<div class="font">
-					<a href="{{ path('user.login') }}"><i class="fa-regular fa-user"></i></a>
-					<a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+					{% if user %}
+					<a href="{{ path('user.logout') }}">Déconnexion<i class="fa-regular fa-user"></i></a>
+					 {% else %}
+					<a href="{{ path('user.login') }}">Connexion<i class="fa-regular fa-user"></i></a>
+					{% endif %}
+					<a href="">Recherche<i class="fa-solid fa-magnifying-glass"></i></a>
+					<a href="">Panier<i class="fa-solid fa-cart-shopping"></i></a>
 				</div>
 				<div class="liens">
 					<a href="/">Accueil</a>
 					<a href="{{ path('user.about') }}">À propos</a>
-					<a href="">Avis client</a>
-					<a href="">Produits</a>
-					<a href="">Contact</a>
+					<a href="{{ path('user.avis') }}">Avis client</a>
+					<a href="{{ path('user.product') }}">Produits</a>
+					<a href="{{ path('user.contact') }}">Contact</a>
 				</div>
 			</nav>
 		</header>
@@ -50,7 +55,7 @@
 				<i class="fa-solid fa-phone-volume">
 					0080-655-69</i>
 				<i class="fa-regular fa-envelope">
-					CONTACT@BIO-ORGANIQUE.COM</i>
+					contact@bio-organique.com</i>
 			</div>
 			<div class="middle">
 				<img id="trustpilot" src="/assets/img/Trust.jpg" alt="" width="50%">

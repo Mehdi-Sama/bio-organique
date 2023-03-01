@@ -3,7 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-/* HEADER STYLE */
+section{
+    height: 100vh;
+}
 header{
     display: flex;
     height: 15vh;
@@ -25,6 +27,7 @@ header img{
 .font i{
     color: black;
     margin: 10px ;
+    font-size: larger;
 }
 .font{
     display: flex;
@@ -35,39 +38,30 @@ nav a{
     margin: 10px;
     color: black;
 }
-/* HEADER END STYLE */
-h1{
+.data{
+    display: flex;
+    justify-content: space-evenly;
+}
+.info{
+    border: solid 2px black;
+    border-radius: 50px;
+    height: 50vh;
+    width: 30vw;
+}
+.info h3, .commande h3{
     text-align: center;
+    color: rgb(228, 202, 128);
 }
-hr{
-    width: 20%;
-    margin-left: 40%;
+.info p{
+    padding-left: 15px;
+    padding-top: 15px;
 }
-article{
-    width: auto;
-    height: 70vh;
-    display: flex;
-    flex-direction: column;
+.commande{
+    border: solid 2px black;
+    border-radius: 50px;
+    height: 50vh;
+    width: 30vw;
 }
-.discover{
-    width: 70%;
-    display: flex;
-    justify-content: center;
-}
-p{
-    text-align: center; 
-    text-align: justify;
-}
-
-section{
-    display: flex;
-    justify-content: space-around;
-}
-.youtube{
-   width: 40%;
-
-}
-/* FOOTER STYLE*/
 footer{
     display: flex;
     justify-content: space-between;
@@ -102,4 +96,3 @@ footer{
     justify-content: space-around;
     align-items: center;
 }
-/* FOOTER END STYLE*/

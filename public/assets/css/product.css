@@ -3,6 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    height: auto;
+    width: auto;
+}
 /* HEADER STYLE */
 header{
     display: flex;
@@ -25,6 +29,7 @@ header img{
 .font i{
     color: black;
     margin: 10px ;
+    font-size: larger;
 }
 .font{
     display: flex;
@@ -36,6 +41,12 @@ nav a{
     color: black;
 }
 /* HEADER END STYLE */
+section{
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+}
 h1{
     text-align: center;
 }
@@ -43,31 +54,38 @@ hr{
     width: 20%;
     margin-left: 40%;
 }
-article{
-    width: auto;
-    height: 70vh;
+.one{
+    height: 30vh;
+    width: 30vw;
     display: flex;
     flex-direction: column;
-}
-.discover{
-    width: 70%;
-    display: flex;
-    justify-content: center;
+    align-items: center;
 }
 p{
-    text-align: center; 
-    text-align: justify;
+    text-align: center;
+}
+.black, .white{
+    width: 60%;
+}
+.whitee{
+    width: 63%;
+}
+.whiteee{
+    width: 61%;
+}
+.bio{
+    border-radius: 50px;
+    max-width: 100%;
+    max-height: 100%;
+    border: solid 1px black;
+}
+button{
+    width: 235px;
+    background-color: rgb(228, 202, 128);
+    border-radius: 5px;
 }
 
-section{
-    display: flex;
-    justify-content: space-around;
-}
-.youtube{
-   width: 40%;
-
-}
-/* FOOTER STYLE*/
+/* FOOTER STYLE */
 footer{
     display: flex;
     justify-content: space-between;
@@ -102,4 +120,4 @@ footer{
     justify-content: space-around;
     align-items: center;
 }
-/* FOOTER END STYLE*/
+/* FOOTER END STYLE */

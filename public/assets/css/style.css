@@ -3,11 +3,16 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    height: auto;
+    width: auto;
+}
+/* HEADER STYLE */
 header{
     display: flex;
     height: 15vh;
     width: 100vw;
-    background-color: black;
+    background-color: white;
     align-items: center;
     justify-content: space-between;
     /* position: fixed; */
@@ -22,8 +27,9 @@ header img{
     padding-left: 20px;
 }
 .font i{
-    color: white;
+    color: black;
     margin: 10px ;
+    font-size: larger;
 }
 .font{
     display: flex;
@@ -32,14 +38,15 @@ header img{
 nav a{
     text-decoration: none;
     margin: 10px;
-    color: white;
+    color: black;
 }
+/* HEADER END STYLE */
 .first{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 85vh;
+    height: 90vh;
 }
 .texte{
     width: 35%;
@@ -53,12 +60,14 @@ nav a{
     height: 40px;
     border-radius: 25px;
     margin-top: 20px;
+    border: none;
 }
 .second{
     display: flex;
     justify-content: center;
     gap: 3%;
     height: 100vh;
+    margin-top: 5%;
 }
 #presentation{
     border-radius: 50px;
@@ -66,8 +75,8 @@ nav a{
 .third{
     display: flex;
     justify-content: space-around;
-    height: 30vh;
-
+    height: 35vh;
+    margin-top: 5%;
 }
 .usda, .tested, .ecocert, .vertu{
     display: flex;
@@ -80,6 +89,7 @@ nav a{
     display: flex;
     justify-content: space-around;
 }
+/* FOOTER STYLE */
 footer{
     display: flex;
     justify-content: space-between;
@@ -114,6 +124,7 @@ footer{
     justify-content: space-around;
     align-items: center;
 }
+/* FOOTER END STYLE */
 #scroll_to_top {
     position: fixed;
     display: flex;

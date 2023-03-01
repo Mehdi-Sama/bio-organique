@@ -1,0 +1,39 @@
+section{
+    height: 85vh;
+}
+h1{
+    text-align: center;
+}
+hr{
+    width: 20%;
+    margin-left: 40%;
+}
+.form{
+    height: auto;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+.form input{
+    height: 50px;
+    width: 280px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+#mail{
+    margin-left: 35px;
+}
+button{
+    width: 20vw;
+    margin-left: 160px;
+    background-color: rgb(228, 202, 128);
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+}
+textarea{
+    height: 200px;
+    width: 600px;
+    padding: 10px;
+}

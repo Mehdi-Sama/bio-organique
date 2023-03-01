@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    width: auto;
+}
 /* HEADER STYLE */
 header{
     display: flex;
@@ -36,6 +39,7 @@ nav a{
     color: black;
 }
 /* HEADER END STYLE */
+
 h1{
     text-align: center;
 }
@@ -44,29 +48,40 @@ hr{
     margin-left: 40%;
 }
 article{
+    height: 40vh;
     width: auto;
-    height: 70vh;
     display: flex;
     flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    padding-left: 7%;
+    padding-right: 7%;
 }
-.discover{
-    width: 70%;
+.avis{
+    display: flex;
+    justify-content: space-evenly;
+    height: 45vh;
+}
+.alya, .elodie, .amandine, .thierry{
+    height: 40vh;
+    width: 40vw;
+    background-color: #B6EFC7;
+    border-radius: 50px;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
-p{
-    text-align: center; 
-    text-align: justify;
+.text{
+    width: 30vw;
+    text-align: center;
 }
-
-section{
+.notice{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    height: 45vh;
 }
-.youtube{
-   width: 40%;
 
-}
+
 /* FOOTER STYLE*/
 footer{
     display: flex;
