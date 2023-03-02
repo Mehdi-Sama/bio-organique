@@ -1,8 +1,10 @@
 {% extends 'layout.html.twig' %}
+  
 
 {% block stylesheet %}
 	<link rel="stylesheet" href="./assets/css/product.css">
 {% endblock %}
+
 
 {% block body %}
 <h1>Nos produits</h1> <br>
@@ -13,21 +15,43 @@
             <img class="bio" src="assets/img/Black30.jpg" alt="">
         </div> <br>
         <p>Huile d'argan bio Premium <br> 30ML - Black collection <br> 29,00€ </p>
-        <button>Ajouter au panier</button>
-    </div>
+        <a href="#demo"><button>Ajouter au panier</button></a> <br>
+        <a href="{{ path('user.more') }}"><input class="know" type="submit" value="En savoir plus"></a>
+        <div id="demo" class="modal">
+            <div class="modal_content">
+                <p>Produit ajouté avec succès</p>
+               <a href="#" class="modal_close">&times;</a>
+            </div>
+        </div>
+            </div>
+            
     <div class="one">
         <div class="black">
             <img class="bio" src="assets/img/Black50.jpg" alt="">
         </div> <br>
         <p>Huile d'argan bio Premium <br> 50ML - Black collection <br> 49,00€ </p>
-        <button>Ajouter au panier</button>
+        <a href="#demo"><button>Ajouter au panier</button></a> <br>
+        <input class="know" type="submit" value="En savoir plus">
+        <div id="demo" class="modal">
+            <div class="modal_content">
+                <p>Produit ajouté avec succès</p>
+               <a href="#" class="modal_close">&times;</a>
+            </div>
+        </div>
     </div>
     <div class="one">
         <div class="black">
             <img class="bio" src="assets/img/Black100.jpg" alt="">
         </div> <br>
         <p>Huile d'argan bio Premium <br> 100ML - Black collection <br> 89,00€ </p>
-        <button>Ajouter au panier</button>
+        <a href="#demo"><button>Ajouter au panier</button></a> <br>
+        <input class="know" type="submit" value="En savoir plus">
+        <div id="demo" class="modal">
+            <div class="modal_content">
+                <p>Produit ajouté avec succès</p>
+               <a href="#" class="modal_close">&times;</a>
+            </div>
+        </div>
     </div>
 </section>
 <section>
@@ -36,21 +60,42 @@
             <img class="bio" src="assets/img/White30.jpeg" alt="">
         </div> <br>
         <p>Huile d'argan bio Premium <br> 30ML - Black collection <br> 29,00€ </p> 
-        <button>Ajouter au panier</button>
+        <a href="#demo"><button>Ajouter au panier</button></a> <br>
+        <input class="know" type="submit" value="En savoir plus">
+        <div id="demo" class="modal">
+            <div class="modal_content">
+                <p>Produit ajouté avec succès</p>
+               <a href="#" class="modal_close">&times;</a>
+            </div>
+        </div>
     </div>
     <div class="one">
         <div class="whitee">
             <img class="bio" src="assets/img/White50.jpeg" alt="">
         </div> <br>
         <p>Huile d'argan bio Premium <br> 50ML - Black collection <br> 49,00€ </p> 
-        <button>Ajouter au panier</button>
+        <a href="#demo"><button>Ajouter au panier</button></a> <br>
+        <input class="know" type="submit" value="En savoir plus">
+        <div id="demo" class="modal">
+            <div class="modal_content">
+                <p>Produit ajouté avec succès</p>
+               <a href="#" class="modal_close">&times;</a>
+            </div>
+        </div>
     </div>
     <div class="one">
         <div class="whiteee">
             <img class="bio" src="assets/img/White100.jpeg" alt="">
         </div> <br>
         <p>Huile d'argan bio Premium <br> 100ML - Black collection <br> 89,00€ </p> 
-        <button>Ajouter au panier</button>
+        <a href="#demo"><button>Ajouter au panier</button></a> <br>
+        <input class="know" type="submit" value="En savoir plus">
+        <div id="demo" class="modal">
+            <div class="modal_content">
+                <p>Produit ajouté avec succès</p>
+               <a href="#" class="modal_close">&times;</a>
+            </div>
+        </div>
     </div>
 </section>
 

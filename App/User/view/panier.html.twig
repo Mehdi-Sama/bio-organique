@@ -1,0 +1,60 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+ <link rel="stylesheet" href="{{ assets('/assets/css/style.css') }}" />
+  <link rel="stylesheet" href="{{ assets('/assets/css/panier.css') }}" />
+{% endblock %}
+
+
+{% block body %}
+<h1>Mon panier</h1>
+<section>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Produits</th>
+      <th scope="col">Prix</th>
+      <th scope="col">Quantité</th>
+      <th scope="col">Sous-total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="promo">
+
+    <input type="text" value="" placeholder="Code promo"></input>
+    <input type="submit" value="Appliquer code promo"></input>
+    <button>Mettre à jour le panier</button>
+
+</div>
+
+<div class="total">
+<span>Total</span>
+<button id="paiement">Payer ma commande</button>
+<button>Retour sur la boutique</button>
+</div>
+
+
+</section>
+{% endblock %}

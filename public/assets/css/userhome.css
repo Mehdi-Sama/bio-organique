@@ -6,6 +6,12 @@
 section{
     height: 100vh;
 }
+.back{
+    height: 85vh;
+    width: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 header{
     display: flex;
     height: 15vh;
@@ -13,7 +19,6 @@ header{
     background-color: white;
     align-items: center;
     justify-content: space-between;
-    /* position: fixed; */
 }
 nav{
     display: flex;
@@ -39,14 +44,19 @@ nav a{
     color: black;
 }
 .data{
+    height: auto;
+    width: auto;
     display: flex;
     justify-content: space-evenly;
 }
-.info{
+.info, .commande{
     border: solid 2px black;
     border-radius: 50px;
     height: 50vh;
     width: 30vw;
+    background-color: black;
+    opacity: 0.8;
+    margin-top: 3%;
 }
 .info h3, .commande h3{
     text-align: center;
@@ -55,12 +65,7 @@ nav a{
 .info p{
     padding-left: 15px;
     padding-top: 15px;
-}
-.commande{
-    border: solid 2px black;
-    border-radius: 50px;
-    height: 50vh;
-    width: 30vw;
+    color: white;
 }
 footer{
     display: flex;

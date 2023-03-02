@@ -11,7 +11,15 @@ header{
     background-color: white;
     align-items: center;
     justify-content: space-between;
-    /* position: fixed; */
+    position: sticky;
+    top: 0;
+        /* From https://css.glass */
+background: rgba(255, 255, 255, 0.941);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(6px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
 }
 nav{
     display: flex;
@@ -45,27 +53,30 @@ hr{
 }
 article{
     width: auto;
-    height: 70vh;
+    height: 20vh;
     display: flex;
     flex-direction: column;
 }
 .discover{
-    width: 70%;
+    height: 20vh;
+    width: auto;
     display: flex;
     justify-content: center;
+    padding-left: 15%;
+    padding-right: 15%;
 }
-p{
-    text-align: center; 
-    text-align: justify;
-}
-
 section{
     display: flex;
     justify-content: space-around;
+    height: 50vh;
 }
 .youtube{
-   width: 40%;
-
+    width: 40%;
+    display: flex;
+    align-items: center; 
+}
+.youtube p{
+    text-align: center;
 }
 /* FOOTER STYLE*/
 footer{

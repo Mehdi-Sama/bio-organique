@@ -1,27 +1,30 @@
 {% extends 'layout.html.twig' %}
 
 {% block stylesheet %}
- <link rel="stylesheet" href="{{ assets('/assets/css/userhome.css') }}">
+	<link rel="stylesheet" href="{{ assets('/assets/css/userhome.css') }}">
 {% endblock %}
 
 {% block body %}
 
-<section>
+	<section>
 
-<h1>Espace utilisateur</h1>
+		<h1>Espace utilisateur</h1>
 
-<p>Bienvenue {{ user.nom }}</p> <br><br>
-
-    <div class="data">
-        <div class="info">
-            <h3>Mes coordonnées</h3>
-            <p>Nom : SEKARNA</p>
-            <p>Prénom : Mehdi</p>
-            <p>Email : mehdi.sekarna@gmail.com</p>
-        </div>
-        <div class="commande">
-        <h3>Mes commandes</3>
-        </div>
-    </div>
-</section>
+		<p>Bienvenue
+			{{ user.nom }}</p>
+		<br><br>
+		<div class="back" style="background-image:url('{{ assets('/assets/img/argan.jpg') }}')">
+			<div class="data">
+				<div class="info">
+					<h3>Mes coordonnées</h3>
+					<p>Nom : SEKARNA</p>
+					<p>Prénom : Mehdi</p>
+					<p>Email : mehdi.sekarna@gmail.com</p>
+				</div>
+				<div class="commande">
+					<h3>Mes commandes</3>
+				</div>
+			</div>
+		</div>
+	</section>
 {% endblock %}

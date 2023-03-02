@@ -31,6 +31,8 @@ class UserModule extends AbstractModule
         $this->router->get('/contact', [$userAction, 'contact'], 'user.contact');
         $this->router->get('/avis', [$userAction, 'avis'], 'user.avis');
         $this->router->get('/product', [$userAction, 'product'], 'user.product' );
+        $this->router->get('/panier', [$userAction, 'panier'], 'user.panier' );
+        $this->router->get('/more', [$userAction, 'more'], 'user.more' );
         
 
     }

@@ -130,4 +130,14 @@ class UserAction
     {
         return $this->renderer->render('@user/product');
     }
+
+    public function panier(ServerRequest $request)
+    {
+        return $this->renderer->render('@user/panier');
+    }
+
+    public function more(ServerRequest $request)
+    {
+        return $this->renderer->render('@user/more');
+    }
 }
