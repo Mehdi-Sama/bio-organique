@@ -15,12 +15,16 @@ class Product
      */
     private $panier; 
 
+
     /**
-     * Many product have Many conteneur.
-     * @ORM\ManyToMany(targetEntity="Conteneur", inversedBy="Product")
-     * 
+     * Many Product have Many Conteneur.
+     * @ORM\ManyToMany(targetEntity="Conteneur")
+     * @ORM\JoinTable(name="produit_contenu",
+     *      joinColumns={@ORM\JoinColumn(name="produit_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="contenu_id", referencedColumnName="id")}
+     *      )
      */
-    private $product;
+    private  $product;
     
    
     /**
@@ -49,13 +53,13 @@ class Product
      * @var string
      */
     private string $imgPath;
-
     /**
      * Constructor
      */
     public function __construct()
     {
         $this->panier = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->product = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**

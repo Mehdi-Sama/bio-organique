@@ -47,7 +47,7 @@ class ProductAction
      * @return void
      */
 
-    public function addVehicule(ServerRequestInterface $request)
+    public function addproduct(ServerRequestInterface $request)
     {
         // recupère la méthode utilisé pour la requête (POST ou GET)
         $method = $request->getMethod();
@@ -72,7 +72,7 @@ class ProductAction
                     $this->toaster->makeToast($error->toString(), Toaster::ERROR);
                 }
                 // redirection
-                return $this->redirect('Ajout de véhicules');
+                return $this->redirect('product.add');
                 // return (new Response())
                 //     ->withHeader('Location', '/admin/addVehicule');
             }
@@ -120,7 +120,7 @@ class ProductAction
         }
 
         $marques = $this->marqueRepository->findAll();
-        return $this->renderer->render('@car/addVehicule', ['marques' => $marques]);
+        return $this->renderer->render('@car/addproduct', ['marques' => $marques]);
     }
 
     /**

@@ -1,53 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% block stylesheet %}
-    {% endblock %}
-    <title>{{ siteName }}</title>
-</head>
-<body>
-   <header>
-        <nav>
-            <ul>
-                <li>
-                    <a href="{{ path('admin.home') }}">Home</a>
-                </li>
-                <li>
-                    <a href="{{ path('Ajout de véhicules') }}">Ajouter un véhicule</a>
-                </li>
-                 <li>
-                    <a href="{{ path('marque.add') }}">Ajouter une marque</a>
-                </li>
-                <li>
-                    <a href="{{ path('marque.list') }}">Liste des marques</a>
-                </li>
-                 <li>
-                    <a href="{{ path('car.list') }}">Liste des véhicules</a>
-                </li>
-                <li>
-                    <a href="{{ path('admin.logout') }}">Déconnexion</a>
-                </li>
-                 
-            </ul>
-        </nav> 
-   </header>
-   <main>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
 
-   {% if hasToast() %}
-        {% for toast in renderToast() %}
-		{{ toast | raw }}
+		<script src="https://kit.fontawesome.com/6782064956.js" crossorigin="anonymous"></script>
+		{% block stylesheet %}{% endblock %}
+		<title>{{ siteName }}</title>
+	</head>
+	<body>
+		<header>
+			<img src="/assets/img/logo.png" alt="" width="20%">
+			<nav>
+				<div class="font">
+					{% if user %}
+					<a href="{{ path('user.logout') }}">Déconnexion<i class="fa-regular fa-user"></i></a>
+					 {% else %}
+					<a href="{{ path('user.login') }}">Connexion<i class="fa-regular fa-user"></i></a>
+					{% endif %}
+					<a href="">Recherche<i class="fa-solid fa-magnifying-glass"></i></a>
+					<a href="{{ path('user.panier') }}">Panier<i class="fa-solid fa-cart-shopping"></i></a>
+				</div>
+				<div class="liens">
+					<a href="/home">Accueil</a>
+					<a href="{{ path('admin.product') }}">Ajouter un produit</a>
+					<a href="{{ path('admin.conteneur') }}">Ajouter un conteneur</a>
+				</div>
+			</nav>
+		</header>
+		<main>
+			{% if hasToast() %}
 
-	{% endfor %}
-   {% endif %}
-    {% block body %}
-    <!-- insérer page ici -->
-    {% endblock %}
-   </main>
-   <footer>
-        <h1>Je suis le footer</h1>
-   </footer>
-</body>
+				{% for toast in renderToast() %}
+					{{ toast | raw }}
+
+				{% endfor %}
+
+			{% endif %}
+			{% block body %}
+
+
+				<!-- insérer page ici -->
+			{% endblock %}
+		</main>
+		<footer>
+			<div class="left">
+				<img id="imgfooter" src="/assets/img/logo.png" alt="" width="20%">
+				<p>L'huile d'Argan BIO du Maroc est de très haute qualité et certidié ECOCERT. Nous utilisons un procédé traditionnel d'extraction de l'huile, selon les procédés traditionnels pour conserver ses précieuses vertus.</p>
+				<i class="fa-solid fa-phone-volume">
+					0080-655-69</i>
+				<i class="fa-regular fa-envelope">
+					contact@bio-organique.com</i>
+			</div>
+			<div class="middle">
+				<img id="trustpilot" src="/assets/img/Trust.jpg" alt="" width="50%">
+				<p>© Bio-Organique créer par Mehdi SEKARNA</p>
+			</div>
+			<div class="right">
+				<h2>INFO</h2>
+				<p>Conditions générales de vente</p>
+				<p>Mentions légales</p>
+				<p>Recherche</p>
+				<p>Suivez nous sur
+					<a href="https://www.instagram.com/bio_organique/"><i class="fa-brands fa-instagram"></i></a>
+				</p>
+				<p></p>
+			</div>
+
+		</footer>
+		{% block scripts %}
+		{% endblock %}
+	</body>
 </html>

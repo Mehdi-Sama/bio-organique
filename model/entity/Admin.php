@@ -5,7 +5,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="administrateur")
+ * @ORM\Table(name="role0")
  */
 class Admin
 {
