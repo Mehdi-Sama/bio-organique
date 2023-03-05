@@ -74,6 +74,11 @@ p{
 }
 .black, .white{
     width: 55%;
+    transition: transform 1s;
+}
+.black:hover, .white:hover{
+    transform: scale(1.1);
+    cursor: pointer;
 }
 .bio{
     border-radius: 50px;

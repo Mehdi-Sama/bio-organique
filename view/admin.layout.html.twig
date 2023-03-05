@@ -17,18 +17,20 @@
 			<img src="/assets/img/logo.png" alt="" width="20%">
 			<nav>
 				<div class="font">
-					{% if user %}
-					<a href="{{ path('user.logout') }}">Déconnexion<i class="fa-regular fa-user"></i></a>
+					{% if admin %}
+					<a href="{{ path('admin.logout') }}">Déconnexion<i class="fa-regular fa-user"></i></a>
 					 {% else %}
-					<a href="{{ path('user.login') }}">Connexion<i class="fa-regular fa-user"></i></a>
+					<a href="{{ path('admin.login') }}">Connexion<i class="fa-regular fa-user"></i></a>
 					{% endif %}
 					<a href="">Recherche<i class="fa-solid fa-magnifying-glass"></i></a>
 					<a href="{{ path('user.panier') }}">Panier<i class="fa-solid fa-cart-shopping"></i></a>
 				</div>
 				<div class="liens">
-					<a href="/home">Accueil</a>
-					<a href="{{ path('admin.product') }}">Ajouter un produit</a>
-					<a href="{{ path('admin.conteneur') }}">Ajouter un conteneur</a>
+					<a href="/">Accueil</a>
+					<a href="{{ path('product.add') }}">Ajouter un produit</a>
+					<a href="{{ path('marque.add') }}">Ajouter un conteneur</a>
+					<a href="{{ path('product.list') }}">Liste des produits</a>
+					<a href="{{ path('marque.list') }}">Liste des conteneurs</a>
 				</div>
 			</nav>
 		</header>

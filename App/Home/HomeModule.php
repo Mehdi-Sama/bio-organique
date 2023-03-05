@@ -19,7 +19,7 @@ class HomeModule extends AbstractModule
         $this->router = $router;
         $this->renderer = $renderer;
         $this->renderer->addPath('home', __DIR__ . DIRECTORY_SEPARATOR . 'view');
-        $this->router->get('/home', [$this, 'index'], 'accueil');
+        $this->router->get('/', [$this, 'index'], 'accueil');
         
 
     }

@@ -7,20 +7,20 @@
 {% endblock %}
 
 {% block body %}
-<h2>Veuillez ajouter votre véhicule ci-dessous</h2>
+<h2>Veuillez ajouter votre produit ci-dessous</h2>
 <div>
 <form method="POST" action="" enctype="multipart/form-data"> 
-    <label for="model">Modèle</label>
-    <input name="model" id="model"type="text"> <br>
-    <label for="marque">Marque</label>
+    <label for="libelle">Libellé</label>
+    <input name="libelle" id="libelle"type="text"> <br>
+    <label for="marque">Volume</label>
     <select name="marque" id="">
         <option value="" selected>---</option>
         {% for marque in marques %}
-            <option value="{{ marque.id }}">{{ marque.nom }}</option>
+            <option value="{{ marque.id }}">{{ marque.volume }}</option>
         {% endfor %}
     </select> <br>
-    <label for="color">Couleur</label>
-    <input name="color" id="color"type="color"> <br>
+    <label for="prix">Prix (€)</label>
+    <input name="prix" id="prix"type="text"> <br>
     <input name="image" id="img" type="file"> <br>
     <input type="submit" value="Ajouter">
 </form>

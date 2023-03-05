@@ -17,16 +17,12 @@ class Product
 
 
     /**
-     * Many Product have Many Conteneur.
-     * @ORM\ManyToMany(targetEntity="Conteneur")
-     * @ORM\JoinTable(name="produit_contenu",
-     *      joinColumns={@ORM\JoinColumn(name="produit_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="contenu_id", referencedColumnName="id")}
-     *      )
+     * @ORM\ManyToOne(targetEntity="Conteneur", inversedBy="Product")
+     * @ORM\JoinColumn(name="volume", referencedColumnName="id", onDelete="CASCADE")
+     * @var Conteneur
      */
-    private  $product;
+    private Conteneur $conteneur; 
     
-   
     /**
      * @ORM\Id
      * @ORM\Column(type="integer", name="id")
@@ -53,13 +49,13 @@ class Product
      * @var string
      */
     private string $imgPath;
+    
     /**
      * Constructor
      */
     public function __construct()
     {
         $this->panier = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->product = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -181,38 +177,27 @@ class Product
     }
 
     /**
-     * Add product.
+     * Set conteneur.
      *
-     * @param \Model\Entity\Conteneur $product
+     * @param \Model\Entity\Conteneur|null $conteneur
      *
      * @return Product
      */
-    public function addProduct(\Model\Entity\Conteneur $product)
+    public function setConteneur(\Model\Entity\Conteneur $conteneur = null)
     {
-        $this->product[] = $product;
+        $this->conteneur = $conteneur;
 
         return $this;
     }
 
     /**
-     * Remove product.
+     * Get conteneur.
      *
-     * @param \Model\Entity\Conteneur $product
-     *
-     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     * @return \Model\Entity\Conteneur|null
      */
-    public function removeProduct(\Model\Entity\Conteneur $product)
+    public function getConteneur()
     {
-        return $this->product->removeElement($product);
+        return $this->conteneur;
     }
 
-    /**
-     * Get product.
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getProduct()
-    {
-        return $this->product;
-    }
 }

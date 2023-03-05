@@ -42,7 +42,7 @@ class AuthAction
                     return (new Response())
                     ->withHeader('Location', '/admin/login');
             }
-            if($auth->login($data['mail'], $data['mdp']))
+            if($auth->login($data['mail'], $data['mdp'])) 
             {
                 $this->toaster->makeToast('Connexion réussie', Toaster::SUCCESS);
                 return(new Response())

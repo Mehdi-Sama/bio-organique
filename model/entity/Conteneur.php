@@ -24,7 +24,12 @@ class Conteneur
      */
     private string $volume;
     
-    
+    /**
+     * @ORM\OneToMany(targetEntity="Product", mappedBy="Conteneur")
+     *
+     * @var [type]
+     */
+    private $product;
 
     /**
      * Get id.
@@ -58,5 +63,48 @@ class Conteneur
     public function getVolume()
     {
         return $this->volume;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->product = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add product.
+     *
+     * @param \Model\Entity\Product $product
+     *
+     * @return Conteneur
+     */
+    public function addProduct(\Model\Entity\Product $product)
+    {
+        $this->product[] = $product;
+
+        return $this;
+    }
+
+    /**
+     * Remove product.
+     *
+     * @param \Model\Entity\Product $product
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeProduct(\Model\Entity\Product $product)
+    {
+        return $this->product->removeElement($product);
+    }
+
+    /**
+     * Get product.
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProduct()
+    {
+        return $this->product;
     }
 }

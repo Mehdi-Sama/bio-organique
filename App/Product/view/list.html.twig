@@ -1,0 +1,40 @@
+{% extends 'admin.layout.html.twig' %}
+
+{% block stylesheet %}
+
+    <link rel="stylesheet" href="{{ assets('/assets/css/style.css') }}">
+
+{% endblock %}
+
+{% block body %}
+<h1>Liste des produits</h1>
+<div>
+<table>
+    <thead>
+        <tr>
+            <th>Libellé</th>
+            <th>Volume</th>
+            <th>Prix</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for product in products %}
+
+        <tr>
+       
+            <td>{{ product.libelle }}</td>
+            <td>{{ product.conteneur.volume }}</td>
+            <td>{{ product.prix }}</td>
+            <td>
+                <a href="{{ path('product.update', {id: product.id}) }}">Modifier</a>
+                <a href="{{ path('product.delete', {id: product.id}) }}">Supprimer</a>
+                <a href="{{ path('product.unique', {id: product.id}) }}">Voir</a>
+            </td>
+        </tr>
+
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock %}

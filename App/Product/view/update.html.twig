@@ -1,0 +1,37 @@
+{% extends 'admin.layout.html.twig' %}
+
+{% block stylesheet %}
+
+    <link rel="stylesheet" href="{{ assets('/assets/css/style.css') }}">
+
+{% endblock %}
+
+{% block body %}
+<h2>Modifications du produit ci-dessous</h2>
+<div>
+<form method="POST" action="" enctype="multipart/form-data"> 
+    <label for="libelle">Libellé</label> 
+    <input name="libelle" value="{{ product.libelle }}" id="libelle"type="text"> 
+    <select name="volume" id=""> 
+        <option value="null">---</option> 
+
+        {% for marque in marques %}
+            {% if marque.id is same as (product.idMarque.id) %}
+            <option value="{{ marque.id }}" selected>{{ marque.volume }}</option>
+            {% else %}
+            <option value="{{ marque.id }}">{{ marque.volume }}</option>
+            {% endif %}
+        {% endfor %}
+
+    </select> 
+    <label for="prix">Prix</label> 
+    <input name="prix" value="{{ product.prix }}" id="prix"type="text"> 
+    <input name="img" id="img" type="file">
+    <input type="submit" value="Modifier">
+
+    <div class="img">
+        <img style="width: 350px; height: 250px" src="{{ assets('/assets/img/'~product.imgPath) }}" alt="">
+    </div>
+</form>
+</div>
+{% endblock %}

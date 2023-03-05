@@ -2,9 +2,10 @@
 
 namespace App\Product\Action;
 
-
+use Model\Entity\Marque;
 use Core\Toaster\Toaster;
 use Model\Entity\Product;
+use Model\Entity\Conteneur;
 use GuzzleHttp\Psr7\Response;
 use Doctrine\ORM\EntityManager;
 use Core\Framework\Router\Router;
@@ -35,7 +36,7 @@ class ProductAction
         $this->container = $container;
         $this->router = $container->get(Router::class);
         // sert à manipuler les marques en bdd
-        // $this->marqueRepository = $manager->getRepository(Marque::class);
+        $this->marqueRepository = $manager->getRepository(Conteneur::class);
         // sert à manipuler les véhicules
         $this->repository = $manager->getRepository(Product::class);
     }
@@ -47,7 +48,7 @@ class ProductAction
      * @return void
      */
 
-    public function addproduct(ServerRequestInterface $request)
+    public function addProduct(ServerRequestInterface $request)
     {
         // recupère la méthode utilisé pour la requête (POST ou GET)
         $method = $request->getMethod();
@@ -62,7 +63,7 @@ class ProductAction
             $validator = new Validator($data);
             // on fixe les règles à respecter sur chaque input du formulaire et on récupère les erreurs s'il y en a
             $errors = $validator
-                ->required('model', 'color', 'marque')
+                ->required('libelle', 'prix', 'marque')
                 ->getErrors();
             // si il y a des erreurs, on crée un Toast par erreur et on redirige l'utilisateur afin d'afficher les messages
             if ($errors) {
@@ -92,7 +93,7 @@ class ProductAction
             // si le déplacement n'est pas possible, on créer un Toast et redirection
             if (!$file->isMoved()) {
                 $this->toaster->makeToast("Une erreur s'est produite durant l'enregistrement de votre image, merci de réessayer", Toaster::ERROR);
-                return $this->redirect('Ajout de véhicules');
+                return $this->redirect('product.add');
                 // return (new Response())
                 //     ->withHeader('Location', '/admin/addVehicule');
             }
@@ -103,24 +104,25 @@ class ProductAction
             // si on a bien réussi à récuprer une marque, on complète les infos du véhicule et on l'enregistre
             if ($marque) {
                 // complétion des infos du véhicule 
-                $new
-                    
+                $new->setLibelle($data['libelle'])
+                    ->setConteneur($marque)
+                    ->setPrix($data['prix'])
                     ->setImgPath($fileName);
                 // préparation à l'enregistrement en bdd
                 $this->manager->persist($new);
                 // enregistrement en bdd
                 $this->manager->flush();
                 // Création d'un Toast
-                $this->toaster->makeToast('Voiture ajoutée avec succès', Toaster::SUCCESS);
+                $this->toaster->makeToast('Produit ajouté avec succès', Toaster::SUCCESS);
             }
             // dans tous les cas on fini par renvoyé la vue 
-            return $this->redirect('car.list');
+            return $this->redirect('product.list');
             // return (new Response)
             //     ->withHeader('Location', '/admin/listCar');
         }
 
         $marques = $this->marqueRepository->findAll();
-        return $this->renderer->render('@car/addproduct', ['marques' => $marques]);
+        return $this->renderer->render('@product/addProduct', ['marques' => $marques]);
     }
 
     /**
@@ -130,11 +132,11 @@ class ProductAction
      * @return string
      */
 
-    public function listCar(ServerRequestInterface $request): string
+    public function listProduct(ServerRequestInterface $request): string
     {
-        $voitures = $this->repository->findAll();
+        $products = $this->repository->findAll();
 
-        return $this->renderer->render('@car/list', ["voitures" => $voitures]);
+        return $this->renderer->render('@product/list', ["products" => $products]);
     }
 
 
@@ -146,13 +148,13 @@ class ProductAction
      * @return string
      */
 
-    public function carUnique(ServerRequestInterface $request): string
+    public function productUnique(ServerRequestInterface $request): string
     {
         $id = $request->getAttribute('id');
 
-        $voiture = $this->repository->find($id);
+        $product = $this->repository->find($id);
 
-        return $this->renderer->render('@car/carUnique', ["unique" => $voiture]);
+        return $this->renderer->render('@product/productUnique', ["unique" => $product]);
     }
 
     /**
@@ -166,7 +168,7 @@ class ProductAction
     {
         $method = $request->getMethod();
         $id = $request->getAttribute('id');
-        $voiture = $this->repository->find($id);
+        $product = $this->repository->find($id);
 
         if ($method === 'POST') {
 
@@ -174,7 +176,7 @@ class ProductAction
             $files = $request->getUploadedFiles();
 
             if (sizeof($files) > 0 && $files['img']->getError() !== 4) {
-                $oldImg = $voiture->getImgPath();
+                $oldImg = $product->getImgPath();
                 $newImg = $files['img'];
                 $imgName = $newImg->getClientFileName();
                 $imgPath = $this->container->get('img.basePath').$imgName;
@@ -182,30 +184,30 @@ class ProductAction
                 $this->fileGuards($newImg);
                 $newImg->moveTo($imgPath);
                 if ($newImg->isMoved()) {
-                    $voiture->setImgPath($imgName);
+                    $product->setImgPath($imgName);
                     $oldPath = $this->container->get('img.basePath').$oldImg;
                     unlink($oldPath);
                 }
             }
 
-            $marque = $this->marqueRepository->find($data['marque']);
-            $voiture->setModel($data['model'])
-                ->setIdMarque($marque)
-                ->setCouleur($data['color']);
+            $marque = $this->marqueRepository->find($data['volume']);
+            $product->setLibelle($data['libelle'])
+                ->setVolume($marque)
+                ->setPrix($data['prix']);
 
             $this->manager->flush();
             $this->toaster->makeToast('Modifications prise en compte', Toaster::SUCCESS);
-            return $this->redirect('car.list');
+            return $this->redirect('product.list');
             // return (new Response)
             //     ->withHeader('Location', '/admin/listCar');
         }
 
         $marques = $this->marqueRepository->findAll();
-        return $this->renderer->render('@car/update', ["voiture" => $voiture, "marques" => $marques]);
+        return $this->renderer->render('@product/update', ["product" => $product, "marques" => $marques]);
     }
 
     /**
-     * Supprime un véhicule de la bdd
+     * Supprime un produit de la bdd
      *
      * @param ServerRequestInterface $request
      * @return void
@@ -214,11 +216,11 @@ class ProductAction
     public function delete(ServerRequestInterface $request)
     {
         $id = $request->getAttribute('id');
-        $voiture = $this->repository->find($id);
-        $this->manager->remove($voiture);
+        $product = $this->repository->find($id);
+        $this->manager->remove($product);
         $this->manager->flush();
         $this->toaster->makeToast('Véhicule supprimé', Toaster::SUCCESS);
-        return $this->redirect('car.list');
+        return $this->redirect('product.list');
         // return (new Response())
         //     ->withHeader('Location', '/admin/listCar');
     }

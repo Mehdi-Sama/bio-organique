@@ -1,0 +1,32 @@
+{% extends 'admin.layout.html.twig' %}
+
+{% block stylesheet %}
+
+    <link rel="stylesheet" href="{{ assets('/assets/css/style.css') }}">
+
+{% endblock %}
+
+{% block body %}
+<h1>Détails du Produit</h1>
+
+<table>
+    <thead>
+        <tr> 
+            <th>Libellé</th>
+            <th>Volume</th>
+            <th>Prix</th> 
+         </tr>
+    </thead>
+    <tbody> 
+        
+         <tr> 
+            <td>{{ unique.libelle }}</td>
+            <td>{{ unique.conteneur.volume}}</td>
+            <td>{{ unique.prix }}</td>
+         </tr>
+      <div class="img">
+        <img style="width: 350px; height: 250px" src="{{ assets('/assets/img/'~unique.imgPath) }}" alt="">
+    </div>
+</table>
+
+{% endblock %}
