@@ -190,9 +190,9 @@ class ProductAction
                 }
             }
 
-            $marque = $this->marqueRepository->find($data['volume']);
+            $marque = $this->marqueRepository->find($data['marque']);
             $product->setLibelle($data['libelle'])
-                ->setVolume($marque)
+                ->setConteneur($marque)
                 ->setPrix($data['prix']);
 
             $this->manager->flush();
@@ -219,7 +219,7 @@ class ProductAction
         $product = $this->repository->find($id);
         $this->manager->remove($product);
         $this->manager->flush();
-        $this->toaster->makeToast('Véhicule supprimé', Toaster::SUCCESS);
+        $this->toaster->makeToast('Produit supprimé', Toaster::SUCCESS);
         return $this->redirect('product.list');
         // return (new Response())
         //     ->withHeader('Location', '/admin/listCar');
@@ -230,7 +230,7 @@ class ProductAction
         //Handle server error
         if ($file->getError() === 4) {
             $this->toaster->makeToast('Une erreur est survenue lors du chargement du fichier', Toaster::ERROR);
-            return $this->redirect('Ajout de véhicules');
+            return $this->redirect('product.add');
             // return (new Response())
             //     ->withHeader('Location', '/admin/addVehicule');
         }
@@ -241,7 +241,7 @@ class ProductAction
         //handle format error
         if (!in_array($type, ['image']) or !in_array($format, ['jpg', 'jpeg', 'png'])) {
             $this->toaster->makeToast("ERREUR / Le format du fichier n'est pas valide, merci de charger un .jpg ou .jpeg ou .png ", Toaster::ERROR);
-            return $this->redirect('Ajout de véhicules');
+            return $this->redirect('product.add');
             // return (new Response())
             //     ->withHeader('Location', '/admin/addVehicule');
         }
@@ -249,7 +249,7 @@ class ProductAction
         //handle excessive size
         if ($file->getSize() > 2047674) {
             $this->toaster->makeToast("Merci de choisir un fichier n'excédant pas 2mo", Toaster::ERROR);
-            return $this->redirect('Ajout de véhicules');
+            return $this->redirect('product.add');
             // return (new Response())
             //     ->withHeader('Location', '/admin/addVehicule');
         }

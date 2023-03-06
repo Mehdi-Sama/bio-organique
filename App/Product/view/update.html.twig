@@ -12,11 +12,11 @@
 <form method="POST" action="" enctype="multipart/form-data"> 
     <label for="libelle">Libellé</label> 
     <input name="libelle" value="{{ product.libelle }}" id="libelle"type="text"> 
-    <select name="volume" id=""> 
+    <select name="marque" id=""> 
         <option value="null">---</option> 
 
         {% for marque in marques %}
-            {% if marque.id is same as (product.idMarque.id) %}
+            {% if marque.id is same as (product.conteneur.id) %}
             <option value="{{ marque.id }}" selected>{{ marque.volume }}</option>
             {% else %}
             <option value="{{ marque.id }}">{{ marque.volume }}</option>
@@ -30,7 +30,7 @@
     <input type="submit" value="Modifier">
 
     <div class="img">
-        <img style="width: 350px; height: 250px" src="{{ assets('/assets/img/'~product.imgPath) }}" alt="">
+        <img style="width: 250px; height: 350px" src="{{ assets('/assets/img/'~product.imgPath) }}" alt="">
     </div>
 </form>
 </div>

@@ -25,7 +25,7 @@
        
             <td>{{ product.libelle }}</td>
             <td>{{ product.conteneur.volume }}</td>
-            <td>{{ product.prix }}</td>
+            <td>{{ product.prix ~ "€" }}</td>
             <td>
                 <a href="{{ path('product.update', {id: product.id}) }}">Modifier</a>
                 <a href="{{ path('product.delete', {id: product.id}) }}">Supprimer</a>

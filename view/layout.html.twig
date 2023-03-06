@@ -14,8 +14,18 @@
 	</head>
 	<body>
 		<header>
+				<!-- MENU BURGER -->
+        <div class="navbar-burger">
+            <div class="navbar-burger-line"></div>
+            <div class="navbar-burger-line"></div>
+            <div class="navbar-burger-line"></div>
+        </div>
+
 			<img src="/assets/img/logo.png" alt="" width="20%">
-			<nav>
+
+		
+
+			<nav id="nav">
 				<div class="font">
 					{% if user %}
 					<a href="{{ path('user.logout') }}">Déconnexion<i class="fa-regular fa-user"></i></a>
@@ -25,7 +35,7 @@
 					<a href="">Recherche<i class="fa-solid fa-magnifying-glass"></i></a>
 					<a href="{{ path('user.panier') }}">Panier<i class="fa-solid fa-cart-shopping"></i></a>
 				</div>
-				<div class="liens">
+				<div id="nav" class="liens">
 					<a href="/">Accueil</a>
 					<a href="{{ path('user.about') }}">À propos</a>
 					<a href="{{ path('user.avis') }}">Avis client</a>
