@@ -138,6 +138,31 @@ class UserAction
 
     public function more(ServerRequest $request)
     {
-        return $this->renderer->render('@user/more');
+        return $this->renderer->render('@user/moreb30');
+    }
+
+    public function moreb50(ServerRequest $request)
+    {
+        return $this->renderer->render('@user/moreb50');
+    }
+
+    public function moreb100(ServerRequest $request)
+    {
+        return $this->renderer->render('@user/moreb100');
+    }
+
+    public function morew30(ServerRequest $request)
+    {
+        return $this->renderer->render('@user/morew30');
+    }
+
+    public function morew50(ServerRequest $request)
+    {
+        return $this->renderer->render('@user/morew50');
+    }
+
+    public function morew100(ServerRequest $request)
+    {
+        return $this->renderer->render('@user/morew100');
     }
 }

@@ -1,0 +1,49 @@
+{% extends 'layout.html.twig' %}
+
+
+{% block stylesheet %}
+	<link rel="stylesheet" href="{{ assets('/assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ assets('/assets/css/more.css') }}">
+{% endblock %}
+
+{% block body %}
+<article>
+    <div class="img">
+        <img id="bio" src="/assets/img/Black50.jpg" alt="">
+    </div>
+    <div class="desc">
+        <h1>Huile d'argan bio Premium</h1>
+        <h2>50ML - Black collection</h2>
+        <h3>49,00 €</h3> <br>
+        <p>Les bienfaits de l’huile d’argan biologique pure certifiée Ecocert:
+        100% biologique, multi-usages, visage, cheveux, ongles, peau. Huile d’argan pressée à froid. Une huile d’argan de qualité devrait aussi avoir un beau flacon en verre ambré avec compte-gouttes pour une meilleure et facile utilisation quotidienne.</p>
+        <p>Une excellente hydratation pour embellir votre peau. C’est un excellent nutriment pour vos cheveux et obtenir des ongles forts et beaux. C’est un produit agréable, non gras et facilement assimilable par la peau.</p>
+        <p>Forte présence d’Oméga 6. Protège contre le vieillissement prématuré pour une peau radieuse, sans rides et d’apparence plus jeune</p>
+        <p>Cette grande huile d’argan 100% pure et biologique est également riche en Phénols & Carotènes pour apaiser, restaurer et réparer.</p>
+        <a href="#demo"><button>Ajouter au panier</button></a>
+        <a href="{{ path('user.product') }}"><button id="retour">Retour à la boutique</button></a>
+        <div id="demo" class="modal">
+            <div class="modal_content">
+                <p>Produit ajouté avec succès</p>
+               <a href="#" class="modal_close">&times;</a>
+            </div>
+        </div>
+    </div>
+</article>
+<section>
+    <div class="avis">
+        <h4>L’huile d’argan BIO: un produit exceptionnel, chargé d’histoire</h4> <br>
+        <p>Utilisée depuis des centaines d’années au Maroc pour ses propriétés culinaires, thérapeutiques et cosmétiques, l’huile d’argan provient de l’arganier, un arbre millénaire qui pousse principalement dans les zones arides du sud-ouest du Maroc.</p>
+        <p>La graine de l’arganier, de la taille d’une noix, cache sous sa pulpe une pierre très dure qui contient un à trois noyaux appelés arganons. L’huile qui en est extraite, est connue pour protéger le système cardio-vasculaire.</p>
+        <p>Avec plus de 75% d’acides gras insaturés, l’huile d’argan a une formidable action réparatrice et régénératrice sur la peau.</p>
+        <p>Riche en vitamine E, en stérols et en composés phénoliques, elle possède également des propriétés antioxydantes pour lutter contre le vieillissement prématuré et le relâchement cutané.</p>
+        <p>Huile précieuse, reconnue pour être extrêmement nourrissante et revigorante, elle convient à tous les types de peau, en particulier les peaux sèches</p>
+        <a href="{{ path('user.contact') }}"><button>Laisser un avis</button></a>
+    </div>
+    <div class="imgg">
+        <img id="blue" src="/assets/img/blue.jpg" alt="">
+    </div>
+</section>
+
+
+{% endblock %}

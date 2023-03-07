@@ -75,6 +75,7 @@ nav a{
 .texte{
     width: 35%;
 }
+
 .img-presentation{
     width: 35%;
 }
@@ -210,5 +211,21 @@ footer{
         transform: rotate(-45deg); 
         opacity: 0;
    }
-
+   #discover{
+    background-color: black;
+    color:rgb(228, 202, 128);
+   }
+   #scroll_to_top{
+    display: none;
+   }
+   .second, .third, .four{
+    display: none;
+   }
+   footer{
+    font-size: x-small;
+   }
+   .left p{
+    display: none;
+   }
+   
 }

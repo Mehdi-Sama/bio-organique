@@ -32,8 +32,11 @@ class UserModule extends AbstractModule
         $this->router->get('/avis', [$userAction, 'avis'], 'user.avis');
         $this->router->get('/product', [$userAction, 'product'], 'user.product' );
         $this->router->get('/panier', [$userAction, 'panier'], 'user.panier' );
-        $this->router->get('/more', [$userAction, 'more'], 'user.more' );
-        
-
+        $this->router->get('/moreb30', [$userAction, 'more'], 'user.moreb30' );
+        $this->router->get('/moreb50', [$userAction, 'moreb50'], 'user.moreb50' );
+        $this->router->get('/moreb100', [$userAction, 'moreb100'], 'user.moreb100' );
+        $this->router->get('/morew30', [$userAction, 'morew30'], 'user.morew30' );
+        $this->router->get('/morew50', [$userAction, 'morew50'], 'user.morew50' );
+        $this->router->get('/morew100', [$userAction, 'morew100'], 'user.morew100' );
     }
 }
