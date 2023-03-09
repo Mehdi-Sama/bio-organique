@@ -17,12 +17,11 @@ header{
     position: sticky;
     top: 0;
     /* From https://css.glass */
-background: rgba(255, 255, 255, 0.941);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(6px);
--webkit-backdrop-filter: blur(5px);
-border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.941);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 nav{
     display: flex;
@@ -169,11 +168,13 @@ footer{
   a i{
     color: black;
   }
-
+.marge{
+    height: 35vh;
+    padding-left: 20px;
+}
+/* RESPONSIVE DESIGN */
 @media screen and (max-width: 780px){
-    nav{
-        display: none;
-    }
+  
     header{
         display: flex;
         justify-content: center;
@@ -183,7 +184,7 @@ footer{
     img{
         width: 50%;
     }
-    #nav.active{
+    .liens.active{
         display: flex;
         flex-direction: column;
         justify-content: center;

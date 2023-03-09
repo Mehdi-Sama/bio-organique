@@ -35,7 +35,7 @@ class MarqueAction
     }
 
     /**
-     * Rajoute une marque de véhicule
+     * Rajoute un conteneur de produit
      *
      * @param ServerRequestInterface $request
      * @return void
@@ -79,7 +79,7 @@ class MarqueAction
     }
 
     /**
-     * Affiche la liste des marques existantes
+     * Affiche la liste des conteneurs existants
      *
      * @param ServerRequestInterface $request
      * @return void
@@ -91,7 +91,7 @@ class MarqueAction
     }
 
     /**
-     * Supprime une marque de véhicule
+     * Supprime un conteneur de produits
      *
      * @param ServerRequestInterface $request
      * @return void

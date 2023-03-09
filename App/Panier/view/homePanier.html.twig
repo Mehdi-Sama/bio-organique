@@ -1,0 +1,66 @@
+{% extends 'layout.html.twig' %}
+{% block stylesheet %}
+	<link rel="stylesheet" href="{{ assets('/assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ assets('/assets/css/panier.css') }}">
+{% endblock %}
+
+{% block title %}Votre panier{% endblock %}
+
+{% block body %}
+    <section class="bg-light p-3">
+        <h1>Votre panier</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Produit</th>
+                <th>Image</th>
+                <th>Volume</th>
+                <th>Prix</th>
+                <th>Quantité</th>
+                <th>Total</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for element in dataPanier %}
+                <tr>
+                    <td>{{ element.produit.libelle }}</td>
+                    <td><img style="width: 50px; height: 50px" src="{{ assets('/assets/img/'~element.produit.imgPath) }}" alt=""></td>
+                    <td>{{ element.volume.volume }}</td>
+                    <td class="text-center">{{ element.produit.prix }} €</td>
+                    <td>{{ element.quantite }}</td>
+                    <td class="text-center">{{ element.quantite * element.produit.prix }} €</td>
+                    <td>
+                        <a href="{{path("productpanier.add", {id: element.produit.id})}}" class="btn btn-success">
+                            <i class="bi bi-cart-plus"></i>
+                        </a>
+                        <a href="{{path("productpanier.remove", {id: element.produit.id})}}" class="btn btn-warning">
+                            <i class="bi bi-cart-dash"></i>
+                        </a>
+                        <a href="{{path("productpanier.delete", {id: element.produit.id})}}" class="btn btn-danger">
+                            <i class="bi bi-cart-x"></i>
+                        </a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5" class="text-center">Votre panier est vide</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4">Total</td>
+                <td>{{ Total }}</td>
+                <td class="text-right">{{ total }} €</td>
+                <td>
+                    <a href="" class="btn btn-danger">
+                        <i class="bi bi-cart-x"></i>
+                    </a>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+     </section>
+{% endblock %}

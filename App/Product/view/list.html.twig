@@ -8,7 +8,8 @@
 
 {% block body %}
 <h1>Liste des produits</h1>
-<div>
+<br>
+<div class="marge">
 <table>
     <thead>
         <tr>
@@ -30,6 +31,7 @@
                 <a href="{{ path('product.update', {id: product.id}) }}">Modifier</a>
                 <a href="{{ path('product.delete', {id: product.id}) }}">Supprimer</a>
                 <a href="{{ path('product.unique', {id: product.id}) }}">Voir</a>
+                <a href="{{ path('productpanier.add', {id: product.id}) }}">Ajouter au panier</a>
             </td>
         </tr>
 

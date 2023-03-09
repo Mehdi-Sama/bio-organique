@@ -6,6 +6,7 @@ use App\User\UserModule;
 use DI\ContainerBuilder;
 use Model\Entity\Product;
 use App\Admin\AdminModule;
+use App\Panier\PanierModule;
 use App\Product\ProductModule;
 use function Http\Response\send;
 use GuzzleHttp\Psr7\ServerRequest;
@@ -22,7 +23,8 @@ $modules = [
    AdminModule::class,
    UserModule::class,
    ProductModule::class,
-   HomeModule::class
+   HomeModule::class,
+   PanierModule::class
    
 ];
 

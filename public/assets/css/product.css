@@ -19,7 +19,6 @@ header{
     top: 0;
         /* From https://css.glass */
 background: rgba(255, 255, 255, 0.941);
-border-radius: 16px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(6px);
 -webkit-backdrop-filter: blur(5px);
@@ -50,10 +49,10 @@ nav a{
 }
 /* HEADER END STYLE */
 section{
-    height: 80vh;
-    display: flex;
-    justify-content: center;
-    justify-content: space-evenly;
+    height: 130vh;
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
 h1{
     text-align: center;
@@ -165,3 +164,10 @@ footer{
     align-items: center;
 }
 /* FOOTER END STYLE */
+@media screen and (max-width: 780px){
+    section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

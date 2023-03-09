@@ -14,6 +14,7 @@ use Core\Framework\Validator\Validator;
 use Core\Framework\Router\RedirectTrait;
 use Core\Framework\Renderer\RendererInterface;
 use Core\Session\SessionInterface;
+use Model\Entity\Product;
 use Psr\Http\Message\ServerRequestInterface;
 
 class UserAction
@@ -26,9 +27,11 @@ class UserAction
     private Toaster $toaster;
     private EntityRepository $repository;
     private SessionInterface $session;
+    private $product;
 
     public function __construct(ContainerInterface $container)
     {
+        $this->product = $container->get(EntityManager::class)->getRepository(Product::class);
         $this->container = $container;
         $this->renderer = $container->get(RendererInterface::class);
         $this->toaster = $container->get(Toaster::class);
@@ -128,7 +131,9 @@ class UserAction
 
     public function product(ServerRequest $request)
     {
-        return $this->renderer->render('@user/product');
+        $product = $this->product->findAll();
+        
+        return $this->renderer->render('@user/product', ["product" => $product]);
     }
 
     public function panier(ServerRequest $request)
